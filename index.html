@@ -13,10 +13,22 @@
         <div class="header-container">
             <div class="header-brand">
                 <div class="logo"><h1><i class="fa-solid fa-dumbbell"></i> ACADEMIA POWER</h1></div>
-                <div class="header-phrase">
-                    O mapa é meu, o esforço é seu, e o resultado será nosso!
-                </div>
             </div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#treinos">Treinos</a></li>
+                    <li><a href="#planos">Planos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
             <form class="search-bar" role="search">
                 <input type="search" placeholder="Pesquisar treinos..." aria-label="Pesquisar">
                 <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -28,6 +40,43 @@
         <section class="hero-section">
             <h2>BEM-VINDO AO TIME</h2>
             <p>Sua jornada fitness começa aqui.</p>
+        </section>
+
+        <section id="planos" class="plans-section">
+            <h3>NOSSOS PLANOS</h3>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <h4>BASIC</h4>
+                    <div class="price">R$ 89<span>/mês</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Musculação completa</li>
+                        <li><i class="fa-solid fa-check"></i> Área de Cardio</li>
+                        <li><i class="fa-solid fa-xmark"></i> Personal Trainer</li>
+                    </ul>
+                    <a href="#" class="plan-btn">ASSINAR</a>
+                </div>
+                <div class="plan-card featured">
+                    <div class="badge">MAIS POPULAR</div>
+                    <h4>VIP</h4>
+                    <div class="price">R$ 149<span>/mês</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Acesso 24h</li>
+                        <li><i class="fa-solid fa-check"></i> Aulas de Crossfit</li>
+                        <li><i class="fa-solid fa-check"></i> Avaliação Mensal</li>
+                    </ul>
+                    <a href="#" class="plan-btn">ASSINAR</a>
+                </div>
+                <div class="plan-card">
+                    <h4>ELITE</h4>
+                    <div class="price">R$ 299<span>/mês</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Consultoria VIP</li>
+                        <li><i class="fa-solid fa-check"></i> Plano Nutricional</li>
+                        <li><i class="fa-solid fa-check"></i> Acesso a todas unidades</li>
+                    </ul>
+                    <a href="#" class="plan-btn">ASSINAR</a>
+                </div>
+            </div>
         </section>
 
         <div class="carousel-container">
@@ -80,7 +129,7 @@
         </section>
     </main>
 
-    <a href="https://wa.me/5517981823594" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp">
+    <a href="https://wa.me/5517981823594?text=Olá%20Lucas%2C%20vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20os%20treinos!" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-tooltip">Fale com o Personal</span>
     </a>

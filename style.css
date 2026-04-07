@@ -93,12 +93,108 @@ header {
     align-items: flex-start;
 }
 
+.menu-toggle, .hamburger {
+    display: none;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--neon-green);
+}
+
 .logo h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+/* Seção de Planos */
+.plans-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.plans-section h3 {
+    color: var(--neon-green);
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.plan-card {
+    background: var(--card-bg);
+    padding: 40px 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: var(--transition);
+    position: relative;
+}
+
+.plan-card.featured {
+    border: 2px solid var(--neon-green);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--neon-green);
+    color: black;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.price span { font-size: 1rem; opacity: 0.7; }
+
+.plan-card ul { list-style: none; padding: 0; margin: 20px 0; text-align: left; }
+.plan-card li { margin: 10px 0; display: flex; align-items: center; gap: 10px; }
+.plan-card .fa-check { color: var(--neon-green); }
+.plan-card .fa-xmark { color: #ff4444; }
+
+.plan-btn {
+    display: block;
+    background: var(--neon-green);
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 .logo h1 i {
@@ -371,23 +467,66 @@ header {
 /* Responsividade */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column;
-        gap: 15px;
-        text-align: left;
-        align-items: flex-start;
+        padding: 10px 20px;
+        flex-wrap: wrap;
     }
+
+    .hamburger {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--neon-green);
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        order: 3;
+        padding: 20px 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .menu-toggle:checked ~ .nav-menu {
+        display: block;
+    }
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .plan-card.featured {
+        transform: scale(1);
+        margin: 20px 0;
+    }
+
     .header-brand {
         align-items: flex-start;
     }
+
     .header-phrase {
         display: none; /* Esconde frase longa no mobile */
     }
+
     .search-bar {
         width: 100%;
+        max-width: 100%;
     }
+
+    .hero-section {
+        padding: 40px 15px;
+        margin: 10px;
+    }
+
     .hero-section h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
+
     .image-track img {
         width: 220px;
         height: 150px;
@@ -395,5 +534,22 @@ header {
     .comment-card {
         max-width: 100%;
         margin: 0 10px;
+    }
+
+    .social-card {
+        padding: 25px 15px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 28px;
+    }
+
+    /* Esconde o tooltip no mobile pois não existe 'hover' com mouse */
+    .whatsapp-tooltip {
+        display: none;
     }
 }
