@@ -18,6 +18,11 @@ body {
     overflow-x: hidden;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Efeito de Teia (Linhas cruzadas) */
 body::before {
     content: "";
@@ -163,9 +168,14 @@ header {
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
 }
 
-@keyframes scroll-right {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100vw); }
+/* O segredo do loop infinito: movemos metade do conteúdo (já que as imagens estão duplicadas) */
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.image-track:hover {
+    animation-play-state: paused;
 }
 
 /* Seção de Comentários */
@@ -273,5 +283,16 @@ header {
     }
     .search-bar {
         width: 100%;
+    }
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+    .image-track img {
+        width: 220px;
+        height: 150px;
+    }
+    .comment-card {
+        max-width: 100%;
+        margin: 0 10px;
     }
 }
