@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia Power - Sua Evolução</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="description" content="Lucas Personal - Treinamento personalizado e consultoria fitness para transformar seu corpo com estratégia e eficiência.">
+    <title>Lucas Personal</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="img/moto.png" type="image/png">
 </head>
+
 <body>
 
     <header>
         <div class="header-container">
             <div class="header-brand">
-                <div class="logo"><h1><i class="fa-solid fa-dumbbell"></i> ACADEMIA POWER</h1></div>
+                <div class="logo">
+                    <h1><i class="fa-solid fa-user-tie"></i>Lucas Personal</h1>
+                </div>
             </div>
 
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
@@ -22,76 +28,64 @@
 
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#treinos">Treinos</a></li>
+                    <li><a href="#">Inicio</a></li>
                     <li><a href="#planos">Planos</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-
-            <form class="search-bar" role="search">
-                <input type="search" placeholder="Pesquisar treinos..." aria-label="Pesquisar">
-                <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
         </div>
     </header>
 
     <main>
         <section class="hero-section">
-            <h2>BEM-VINDO AO TIME</h2>
-            <p>Sua jornada fitness começa aqui.</p>
+            <h2>TRANSFORME SEU CORPO COM ESTRATÉGIA</h2>
+            <p>Treinamento personalizado focado nos seus objetivos e na sua realidade.</p>
         </section>
 
         <section id="planos" class="plans-section">
-            <h3>NOSSOS PLANOS</h3>
+            <h3>MINHAS CONSULTORIAS</h3>
             <div class="plans-grid">
-                <div class="plan-card">
-                    <h4>BASIC</h4>
-                    <div class="price">R$ 89<span>/mês</span></div>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Musculação completa</li>
-                        <li><i class="fa-solid fa-check"></i> Área de Cardio</li>
-                        <li><i class="fa-solid fa-xmark"></i> Personal Trainer</li>
-                    </ul>
-                    <a href="#" class="plan-btn">ASSINAR</a>
-                </div>
                 <div class="plan-card featured">
                     <div class="badge">MAIS POPULAR</div>
-                    <h4>VIP</h4>
-                    <div class="price">R$ 149<span>/mês</span></div>
+                    <h4>Semanal</h4>
+                    <div class="price">R$ 50<span>/mês</span></div>
                     <ul>
-                        <li><i class="fa-solid fa-check"></i> Acesso 24h</li>
-                        <li><i class="fa-solid fa-check"></i> Aulas de Crossfit</li>
-                        <li><i class="fa-solid fa-check"></i> Avaliação Mensal</li>
+                        <li><i class="fa-solid fa-check"></i> 4 Encontros por Semana</li>
+                        <li><i class="fa-solid fa-check"></i> Consultoria Online 24h</li>
+                        <li><i class="fa-solid fa-check"></i> Ajuste de Técnica por Vídeo</li>
                     </ul>
-                    <a href="#" class="plan-btn">ASSINAR</a>
+                    <a href="https://wa.me/5517981823594?text=Olá%20Lucas%2C%20tenho%20interesse%20no%20Plano%20Semanal!" class="plan-btn" target="_blank" rel="noopener noreferrer">QUERO ESTE</a>
                 </div>
+
                 <div class="plan-card">
-                    <h4>ELITE</h4>
-                    <div class="price">R$ 299<span>/mês</span></div>
+                    <h4>Plano Black</h4>
+                    <div class="price">R$ 120<span>/mês</span></div>
                     <ul>
-                        <li><i class="fa-solid fa-check"></i> Consultoria VIP</li>
-                        <li><i class="fa-solid fa-check"></i> Plano Nutricional</li>
-                        <li><i class="fa-solid fa-check"></i> Acesso a todas unidades</li>
+                        <li><i class="fa-solid fa-check"></i> Personal 5x por Semana</li>
+                        <li><i class="fa-solid fa-check"></i> Avaliação Antropométrica</li>
+                        <li><i class="fa-solid fa-check"></i> Foco Total em Performance</li>
+                        <li><i class="fa-solid fa-check"></i> Acompanhamento Individualizado</li>
+
                     </ul>
-                    <a href="#" class="plan-btn">ASSINAR</a>
+                    <a href="https://wa.me/5517981823594?text=Olá%20Lucas%2C%20tenho%20interesse%20no%20Plano%20Black!" class="plan-btn" target="_blank" rel="noopener noreferrer">QUERO ESTE</a>
                 </div>
             </div>
         </section>
 
         <div class="carousel-container">
-            <div class="image-track" aria-label="Galeria de fotos da academia">
-                <img src="https://via.placeholder.com/300x200/000/00ff00?text=Treino+1" alt="Pessoa realizando agachamento livre">
-                <img src="https://via.placeholder.com/300x200/000/00ff00?text=Treino+2" alt="Área de musculação com halteres">
-                <img src="https://via.placeholder.com/300x200/000/00ff00?text=Treino+3" alt="Aluna fazendo exercício de cardio">
-                <img src="https://via.placeholder.com/300x200/000/00ff00?text=Treino+4" alt="Professor auxiliando aluno no supino">
-                <img src="https://via.placeholder.com/300x200/000/00ff00?text=Treino+5" alt="Equipamentos modernos de musculação">
-                <!-- Imagens duplicadas para o efeito infinito -->
-                <img src="https://via.placeholder.com/300x200/000/00ff00?text=Treino+1" alt="" aria-hidden="true">
-                <img src="https://via.placeholder.com/300x200/000/00ff00?text=Treino+2" alt="" aria-hidden="true">
-                <img src="https://via.placeholder.com/300x200/000/00ff00?text=Treino+3" alt="" aria-hidden="true">
-                <img src="https://via.placeholder.com/300x200/000/00ff00?text=Treino+4" alt="" aria-hidden="true">
-                <img src="https://via.placeholder.com/300x200/000/00ff00?text=Treino+5" alt="" aria-hidden="true">
+            <div class="image-group group-1" aria-label="Galeria de fotos 1">
+                <img src="img/tst.jpg" alt="Pessoa realizando agachamento livre">
+                <img src="img/tst.jpg" alt="Área de musculação com halteres">
+                <img src="img/tst.jpg" alt="Aluna fazendo exercício de cardio">
+                <img src="img/tst.jpg" alt="Professor auxiliando aluno no supino">
+                <img src="img/tst.jpg" alt="Equipamentos modernos de musculação">
+            </div>
+            <div class="image-group group-2" aria-label="Galeria de fotos 2">
+                <img src="img/tst.jpg" alt="Treino funcional dinâmico">
+                <img src="img/tst.jpg" alt="Alongamento e mobilidade">
+                <img src="img/tst.jpg" alt="Execução de levantamento terra">
+                <img src="img/tst.jpg" alt="Área de pesos livres organizada">
+                <img src="img/tst.jpg" alt="Consultoria técnica presencial">
             </div>
         </div>
 
@@ -99,15 +93,16 @@
             <h3>O QUE NOSSOS ALUNOS DIZEM</h3>
             <div class="comments-grid">
                 <div class="comment-card">
-                    <p>"A melhor academia da região! Os treinos personalizados realmente fazem a diferença nos resultados."</p>
+                    <p>"O acompanhamento do Lucas mudou minha visão sobre treino. Ele entende minha rotina e adapta
+                        tudo."</p>
                     <span>- João Silva</span>
                 </div>
                 <div class="comment-card">
-                    <p>"Ambiente motivador e equipamentos de ponta. Perdi 10kg em 3 meses seguindo o cronograma."</p>
+                    <p>"O melhor investimento que fiz na minha saúde. Atencioso e muito técnico."</p>
                     <span>- Maria Oliveira</span>
                 </div>
                 <div class="comment-card">
-                    <p>"O acompanhamento dos professores é excelente. Sinto que finalmente estou treinando do jeito certo."</p>
+                    <p>"Finalmente estou treinando do jeito certo e sem lesões. Excelente profissional!"</p>
                     <span>- Ricardo Santos</span>
                 </div>
             </div>
@@ -116,12 +111,14 @@
         <section class="social-section">
             <div class="social-card">
                 <h3>Me acompanhe nas redes sociais</h3>
-                <p>Dicas exclusivas, rotina e motivação em todos os meus canais oficiais.</p>
+                <p>Dicas exclusivas, rotina e motivação em todas as minhas redes sociais.</p>
                 <div class="social-buttons">
-                    <a href="https://www.instagram.com/lucasmomo.personal/?hl=pt-br" target="_blank" rel="noopener noreferrer" class="social-btn">
+                    <a href="https://www.instagram.com/lucasmomo.personal/?hl=pt-br" target="_blank"
+                        rel="noopener noreferrer" class="social-btn">
                         <i class="fab fa-instagram"></i> Instagram
                     </a>
-                    <a href="https://www.facebook.com/lucas.ferreira.404740" target="_blank" rel="noopener noreferrer" class="social-btn">
+                    <a href="https://www.facebook.com/lucas.ferreira.404740" target="_blank" rel="noopener noreferrer"
+                        class="social-btn">
                         <i class="fab fa-facebook"></i> Facebook
                     </a>
                 </div>
@@ -129,9 +126,20 @@
         </section>
     </main>
 
-    <a href="https://wa.me/5517981823594?text=Olá%20Lucas%2C%20vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20os%20treinos!" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp">
+    <a href="https://wa.me/5517981823594?text=Olá%20Lucas%2C%20vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20os%20treinos!"
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-tooltip">Fale com o Personal</span>
     </a>
+
+    <!-- Modal para imagem em tela cheia (Lightbox) -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

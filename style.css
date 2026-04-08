@@ -9,9 +9,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    
-    background: radial-gradient(circle at bottom right, #00ff73 0%, #051a05 30%, var(--dark-bg) 100%);
-    
+
+    /* Substituído o gradiente por uma imagem com overlay escuro para legibilidade */
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('img/transferir.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
     color: white;
@@ -30,13 +33,7 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-image: 
-        linear-gradient(rgba(0, 255, 0, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-    pointer-events: none;
-    z-index: 1;
+    height: 100%; 
 }
 
 header {
@@ -138,8 +135,9 @@ header {
 }
 
 .plans-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
     max-width: 1100px;
     margin: 0 auto;
@@ -152,13 +150,17 @@ header {
     border: 1px solid rgba(255,255,255,0.1);
     transition: var(--transition);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.plan-card.featured {
-    border: 2px solid var(--neon-green);
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+.plan-card:hover {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
 }
+
+
 
 .badge {
     position: absolute;
@@ -194,7 +196,8 @@ header {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: auto;
+    width: 100%;
 }
 
 .logo h1 i {
@@ -210,89 +213,116 @@ header {
     opacity: 0.8;
 }
 
-.search-bar {
-    flex-grow: 1;
-    max-width: 400px;
-    display: flex;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px 0 0 5px;
-    border: none;
-    outline: none;
-}
-
-.search-bar button {
-    padding: 10px 15px;
-    background-color: var(--neon-green);
-    border: none;
-    color: black;
-    font-weight: bold;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.search-bar button:hover {
-    background-color: #00cc00;
-}
-
 /* Carrossel de Imagens (Rolagem para a Direita) */
 .carousel-container {
     margin-top: 50px;
     width: 100%;
-    overflow: hidden;
     position: relative;
-    padding: 20px 0;
-}
-
-/* Camadas de Fade nas laterais */
-.carousel-container::before,
-.carousel-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 15%; /* Largura do efeito de desvanecimento */
-    height: 100%;
-    z-index: 2;
-    pointer-events: none; /* Permite clicar nas imagens por baixo do fade */
-}
-
-.carousel-container::before {
-    left: 0;
-    background: linear-gradient(to right, var(--dark-bg), transparent);
-}
-
-.carousel-container::after {
-    right: 0;
-    background: linear-gradient(to left, var(--dark-bg), transparent);
-}
-
-.image-track {
+    height: 280px; /* Altura fixa para acomodar as imagens sobrepostas */
     display: flex;
-    width: max-content;
-    animation: scroll-left 25s linear infinite;
+    justify-content: center;
 }
 
-.image-track img {
-    width: 300px;
-    height: 200px;
+.image-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none; /* Evita que o grupo invisível intercepte cliques */
+}
+
+.image-group img {
+    width: 18%; /* Ajustado para caberem 5 imagens com respiro */
+    height: 260px;
     object-fit: cover;
-    margin: 0 15px;
+    box-sizing: border-box;
     border-radius: 10px;
     border: 2px solid var(--neon-green);
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+    transition: var(--transition);
+    position: relative;
 }
 
-/* O segredo do loop infinito: movemos metade do conteúdo (já que as imagens estão duplicadas) */
-@keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.image-group img:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    cursor: pointer;
+    border-color: #fff;
 }
 
-.image-track:hover {
+/* Estilos do Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    border: 3px solid var(--neon-green);
+    border-radius: 10px;
+    box-shadow: 0 0 30px var(--neon-green);
+    animation: zoom-in 0.3s ease;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-lightbox:hover {
+    color: var(--neon-green);
+    transform: scale(1.2);
+}
+
+/* Animação de troca de grupos */
+.group-1 {
+    animation: fade-group-1 10s infinite;
+    pointer-events: auto;
+}
+
+.group-2 {
+    animation: fade-group-2 10s infinite;
+    pointer-events: auto;
+}
+
+@keyframes fade-group-1 {
+    0%, 45% { opacity: 1; z-index: 2; }
+    50%, 95% { opacity: 0; z-index: 1; }
+    100% { opacity: 1; z-index: 2; }
+}
+
+@keyframes fade-group-2 {
+    0%, 45% { opacity: 0; z-index: 1; }
+    50%, 95% { opacity: 1; z-index: 2; }
+    100% { opacity: 0; z-index: 1; }
+}
+
+@keyframes zoom-in {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.image-group:hover {
     animation-play-state: paused;
 }
 
@@ -496,7 +526,7 @@ header {
     }
 
     .plans-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         padding: 0 20px;
     }
 
@@ -513,11 +543,6 @@ header {
         display: none; /* Esconde frase longa no mobile */
     }
 
-    .search-bar {
-        width: 100%;
-        max-width: 100%;
-    }
-
     .hero-section {
         padding: 40px 15px;
         margin: 10px;
@@ -527,9 +552,11 @@ header {
         font-size: 1.8rem;
     }
 
-    .image-track img {
-        width: 220px;
-        height: 150px;
+    .carousel-container { height: 120px; }
+    .image-group img {
+        width: 18%; 
+        height: 100px;
+        gap: 5px;
     }
     .comment-card {
         max-width: 100%;
